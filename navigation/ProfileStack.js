@@ -14,6 +14,7 @@ import SellingOrdersList from "../screens/ProfileScreens/SellingOrdersList";
 import MeasurementsList from "../screens/ProfileScreens/MeasurementsList";
 import Earnings from "../screens/ProfileScreens/Earnings";
 import HelpCenter from '../screens/ProfileScreens/HelpCenter';
+import FAQ from '../screens/ProfileScreens/FAQ';
 //import MessageList from '../screens/ChatScreens/MessageList';
 //import Messages from '../screens/ChatScreens/Messages';
 
@@ -35,6 +36,7 @@ export default function ProfileStack() {
             <Stack.Screen name="SellingOrder" component={SellingOrdersList} options={{ title: 'Selling Orders' }}/>
             <Stack.Screen name="SellingOrderDetails" component={SellingOrderDetail} options={{ title: 'Order Details' }}/>
             <Stack.Screen name="HelpCenter" component={HelpCenter} options={{ title: 'Help Center' }}/>
+            <Stack.Screen name="FAQ" component={FAQ} options={{ title: 'Frequently Asked Questions' }}/>
           {/*}  <Stack.Screen name="MessageList" component={MessageList} options={{ title: 'Chat Room' }}/>
             <Stack.Screen name="Messages" component={Messages} options={{ title: 'Chat' }}/>
     */}

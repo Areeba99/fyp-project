@@ -27,6 +27,16 @@ export default function ShowServiceDetails({navigation, route}) {
                 setSellerName(snapshot.docs[0].data().name);
               });
    });
+   const [sellerDp, setSellerDp] = useState([]); 
+    useEffect(()=>{
+        const sellerName = firebase.firestore()
+            .collection('users')
+            .where("uid","==",route.params.service.seller)
+            .get()
+            .then(snapshot => {
+                setSellerDp(snapshot.docs[0].data().dp);
+              });
+   });
 
     useEffect(()=>{
         let covers = route.params.service?.cover.filter(function (el) {
@@ -62,6 +72,11 @@ export default function ShowServiceDetails({navigation, route}) {
         nameuser2: sellerName,
         user1: loggedIn.uid,
         user2: route.params.service.seller,
+        avatar1: loggedIn.dp,
+        avatar2: sellerDp,
+        isBlocked: false,
+        blockedBy1: false,
+        blockedBy2: false,
         latestMessage: {
             text: `${loggedIn.name} started a conversation.`,
             createdAt: new Date().getTime()

@@ -226,6 +226,7 @@ export default function ProfileScreen({navigation, route}) {
                     titleStyle={{fontSize: 14}}
                     topDivider
                     title="F.A.Q"
+                    onPress={() => navigation.navigate("FAQ")}
                 />
 
 
